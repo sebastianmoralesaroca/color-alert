@@ -1,24 +1,22 @@
-console.log("hello");
+console.log("hello!");
 
 const sectionColor = document.querySelector ("sectionColor");
-const containerColor = document.querySelector ("containerColor");
-const btnColor = document.querySelector ("btnColor");
+const containerColor = document.getElementById ("containerColor");
+const next = document.getElementById ("next");
 
-var fruts = ["manzana", "pera,", "naranja", "mango", "babana", "durazno"];
-var vegetable = ["lechuga", "tomate", "veterraga", "zanahoria", "papas"]
-
-
-const aleatorio = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-};
-
-function suma () {
-     console.log(aleatorio(0, 7));
-};
-
-suma()
+const colorRandom = ["red", "green", "blue", "alpha", "black", "yellow", "brown", "aqua", "orange", "purple", "pink", "gold"];
 
 
 
+function election_random (list) {
+    return list[Math.floor((Math.random()*list.length))];
+}
 
 
+next.addEventListener ("click", () => {
+containerColor.style.backgroundColor = election_random(colorRandom);
+    console.log("Click!")
+});
+
+
+console.log("bye!");
